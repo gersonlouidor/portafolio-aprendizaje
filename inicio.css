@@ -187,3 +187,35 @@ footer {
     width: 200px;
   }
 }
+
+.bio-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.bio-image img {
+  width: 260px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.bio-text {
+  flex: 1;
+}
+
+.bio-container {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.bio-image {
+  order: 2;
+}
+
+.bio-text {
+  order: 1;
+}
