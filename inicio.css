@@ -31,22 +31,40 @@ main {
   padding: 20px;
 }
 
-header {
+.header {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
-    135deg,
-    var(--vino-oscuro) 0%,
-    var(--vino-medio) 40%,
-    var(--rojo-principal) 100%
+    rgba(75, 13, 20, 0.85),
+    rgba(177, 18, 38, 0.85)
   );
-  color: var(--blanco);
-  height: 230px;
+}
+
+.header-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
 }
+
 
 header h1 {
   font-size: 2.8rem;
@@ -116,7 +134,7 @@ article {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: slide 30s linear infinite;
+  animation: slide 40s linear infinite;
 }
 
 .slider img,
@@ -169,4 +187,3 @@ footer {
     width: 200px;
   }
 }
-
