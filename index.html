@@ -5,10 +5,16 @@
   <meta charset="UTF-8">
   <meta name="description" content="Portafolio de aprendizaje - Terapia Física y Rehabilitación">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de Aprendizaje | Inicio</title>
+  <title>Portafolio de Gerson | Inicio</title>
 </head>
 
 <body>
+
+<div class="modal-img" id="modalImg">
+  <span class="cerrar" onclick="cerrarModal()">×</span>
+  <img id="imgGrande">
+</div>
+
 
 <header class="header">
   <img src="image10.jpg" alt="Imagen de portada" class="header-img">
@@ -18,14 +24,13 @@
   </div>
 </header>
 
-<main>
+
   <section class="intro-bio-grid">
-    <!-- INTRODUCCIÓN -->
     <section class="intro">
       <h2>Introducción</h2>
       <div class="bio-container">
         <div class="bio-image">
-          <img src="image12.png" alt="Fotografía personal">
+          <img src="image9.jpg" alt="Fotografía personal" onclick="abrirModal(this)">
         </div>
         <div class="bio-text">
           <p>
@@ -49,12 +54,12 @@
       </div>
     </section>
 
-    <!-- INFORMACIÓN BIOGRÁFICA -->
+
     <section class="bio">
       <h2>Información Biográfica</h2>
       <div class="bio-container">
         <div class="bio-image">
-          <img src="image9.jpg" alt="Fotografía personal">
+          <img src="Familia.jpeg" alt="Fotografía personal" onclick="abrirModal(this)">
         </div>
         <div class="bio-text">
           <p>
@@ -78,9 +83,10 @@
     </section>
   </section>
 
+  <section>
   <section class="contenido-principal">
     <article>
-      <h3>Estudios Realizados</h3>
+      <h2>Estudios Realizados</h2>
       <ul>
         <li>
           <strong>Universidad de Montemorelos (UM):</strong><br>
@@ -88,13 +94,15 @@
           Lugar: Universidad de Montemorelos<br>
         </li>
         <li>
+          <img src="image1.png" alt="Graduacion prepa" onclick="abrirModal(this)">
           <strong>Preparatoria:</strong><br>
           Nombre: Colegio Francisco May<br>
-          Lugar: Playa del Carmen, Q. Roo, México<br>
+          Lugar: Playa del Carmen, Q. Roo, México<br>   
           Edad: 17 años<br>
           Fechas: _________________________
         </li>
         <li>
+          <img src="image2.png" alt="Graduacion Secu" onclick="abrirModal(this)">
           <strong>Secundaria:</strong><br>
           Nombre: Colegio Francisco May<br>
           Lugar: Playa del Carmen, Q. Roo, México<br>
@@ -102,11 +110,13 @@
           Fechas: _________________________
         </li>
         <li>
-          <strong>Primaria:</strong><br>
+          <img src="image3.png" alt="graduacion primaria" onclick="abrirModal(this)">  
+          <strong>Primaria:</strong><br>        
           Nombre: Colegio Ignacio Comonfort<br>
           Lugar: Cancún Q. Roo, México<br>
           Edad: 11 años<br>
           Fechas: _________________________
+
         </li>
         <li>
           <strong>Preescolar:</strong><br>
@@ -116,51 +126,52 @@
           Fechas: _________________________
         </li>
       </ul>
-      <p><strong>Evidencias:</strong></p>
-      <section class="slider">
-        <div class="slider-track">
-          <img src="image1.png" alt="Evidencia 1">
-          <img src="image2.png" alt="Evidencia 2">
-          <img src="image3.png" alt="Evidencia 3">
-        </div>
-      </section>
-    </article>
 
-    <article>
-      <h3>Logros o Emprendimientos Personales</h3>
-      <ul>
-        <li>Concursos: _____________________</li>
-        <li>Diplomas o reconocimientos: ____</li>
-        <li>Carreras anteriores: ___________</li>
-        <li>Otros logros relevantes: ________</li>
-      </ul>
-      <p><strong>Evidencias:</strong> (certificados, fotos, documentos)</p>
-      <section class="slider">
-        <div class="slider-track">
-          <img src="image6.jpg" alt="Evidencia 6">
-          <img src="image5.jpg" alt="Evidencia 5">
-          <video src="video1.mp4" controls muted loop>
-            <p>Video de logros personales (tu navegador no soporta video).</p>
-          </video>
-        </div>
-      </section>
-    </article>
+<!-- Hobbies y Pasatiempos -->
+<section class="hobbies">
+  <h2>Hobbies y Pasatiempos</h2>
+  <div class="slider">
+    <div class="slider-track">
+      <img src="image6.jpg" alt="Evidencia 6" onclick="abrirModal(this)">
+      <img src="image5.jpg" alt="Evidencia 5" onclick="abrirModal(this)">
+      <video src="video1.mp4" controls muted loop>
+        <p>Video de logros personales (tu navegador no soporta video).</p>
+      </video>
+    </div>
+  </div>
+</section>
 
-    <article>
-      <h3>Cargos Realizados en la Iglesia</h3>
-      <ul>
-        <li>Cargo: Consejero de Conquistadores, Asistente de Transmisión, Diacono</li>
-        <li>Periodo: ______________________</li>
-        <li>Funciones realizadas: __________</li>
-      </ul>
-    </article>
-  </section>
-</main>
+<!-- Cargos Realizados en la Iglesia -->
+<section class="cargos">
+  <h2>Cargos Realizados en la Iglesia</h2>
+  <ul>
+    <li><strong>Cargo:</strong> Consejero de Conquistadores, Asistente de Transmisión, Diacono</li>
+    <li><strong>Periodo:</strong> ______________________</li>
+    <li><strong>Funciones realizadas:</strong> ______________________</li>
+  </ul>
+</section>
 
+<!-- Footer -->
 <footer>
   <p>Portafolio de Aprendizaje – Terapia Física y Rehabilitación</p>
   <p>Made for: <strong>Gerson Louidor</strong></p>
 </footer>
+
+
+<script>
+function abrirModal(img) {
+  document.getElementById("modalImg").style.display = "flex";
+  document.getElementById("imgGrande").src = img.src;
+}
+
+function cerrarModal() {
+  document.getElementById("modalImg").style.display = "none";
+}
+function agrandar(img) {
+  img.classList.toggle("grande");
+}
+</script>
+
 
 </body>
 </html>
