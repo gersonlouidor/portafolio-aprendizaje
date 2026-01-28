@@ -1,80 +1,87 @@
-/* ==============================
-   RESET BÁSICO
-================================ */
+:root {
+  --vino-oscuro: #4b0d14;
+  --vino-medio:  #6a0f1a;
+  --rojo-principal: #b11226;
+  --rojo-claro: #c4162a;
+  --blanco: #ffffff;
+  --gris-fondo: #f4f6f8;
+  --texto: #333333;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ==============================
-   ESTILOS GENERALES
-================================ */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
+  background-color: var(--gris-fondo);
+  color: var(--texto);
   line-height: 1.6;
 }
 
-/* ==============================
-   CONTENEDOR PRINCIPAL
-================================ */
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
 }
 
-/* ==============================
-   ENCABEZADO
-================================ */
 header {
-  background-color: #1e3a5f;
-  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    var(--vino-oscuro) 0%,
+    var(--vino-medio) 40%,
+    var(--rojo-principal) 100%
+  );
+  color: var(--blanco);
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px;
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
 header p {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 1.1rem;
+  opacity: 0.95;
 }
 
-/* ==============================
-   SECCIONES
-================================ */
 section {
-  background-color: #ffffff;
+  background-color: var(--blanco);
   padding: 25px;
-  margin-bottom: 30px;
-  border-radius: 6px;
+  margin-bottom: 35px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.08);
 }
 
-/* ==============================
-   TÍTULOS
-================================ */
 h2 {
-  color: #1e3a5f;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #1e3a5f;
-  padding-bottom: 5px;
+  color: var(--vino-oscuro);
+  margin-bottom: 18px;
+  font-size: 1.9rem;
+  border-bottom: 3px solid var(--rojo-principal);
+  padding-bottom: 8px;
 }
 
 h3 {
-  color: #2c4f7c;
+  color: var(--vino-medio);
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* ==============================
-   TEXTO Y LISTAS
-================================ */
 p {
   margin-bottom: 15px;
   text-align: justify;
@@ -89,40 +96,76 @@ li {
   margin-bottom: 8px;
 }
 
-/* ==============================
-   ARTÍCULOS
-================================ */
 article {
-  margin-bottom: 25px;
-  padding-left: 10px;
-  border-left: 4px solid #1e3a5f;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  border-left: 4px solid var(--rojo-principal);
 }
 
-/* ==============================
-   FOOTER
-================================ */
+.slider {
+  width: 100%;
+  overflow: hidden;
+  margin: 25px auto;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  padding: 15px 0;
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.12);
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: slide 18s linear infinite;
+}
+
+.slider img,
+.slider video {
+  width: 260px;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slider-track:hover {
+  animation-play-state: paused;
+}
+
 footer {
-  background-color: #1e3a5f;
-  color: #ffffff;
+  background-color: var(--vino-oscuro);
+  color: var(--blanco);
   text-align: center;
-  padding: 15px;
+  padding: 18px;
   font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 
-/* ==============================
-   RESPONSIVE BÁSICO
-================================ */
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 2.1rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
   main {
     margin: 20px;
     padding: 15px;
   }
 
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
+  .slider img,
+  .slider video {
+    width: 200px;
   }
 }
