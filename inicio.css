@@ -116,7 +116,7 @@ article {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: slide 18s linear infinite;
+  animation: slide 30s linear infinite;
 }
 
 .slider img,
@@ -169,3 +169,4 @@ footer {
     width: 200px;
   }
 }
+
