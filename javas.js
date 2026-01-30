@@ -5,7 +5,6 @@ function abrirModal(elemento) {
 
   modal.style.display = "flex";
 
-  // Reset
   modalImg.style.display = "none";
   modalVideo.style.display = "none";
   modalVideo.pause();
@@ -49,11 +48,9 @@ function moverSlider(direccion) {
   track.style.transform = `translateX(-${index * ancho}px)`;
 }
 
-// Botones
 btnNext.addEventListener("click", () => moverSlider(1));
 btnPrev.addEventListener("click", () => moverSlider(-1));
 
-// Teclado
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") moverSlider(1);
   if (e.key === "ArrowLeft") moverSlider(-1);
